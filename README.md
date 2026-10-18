@@ -1,5 +1,8 @@
 # PS4 Download Monitor 5.2
 
+## 5.2.3 clearer "could not send" error
+- Sending the server goes to GoldHEN's loader (port 9090) only; it never needs ezRemote. The old message wrongly said "ezRemote web server". Now it names port 9090 and shows which of 9090 / 6701 / 8080 answer right now.
+
 ## 5.2.2 find the PS4 automatically
 - **Add PS4** now searches the network by itself (and has a "Find my PS4 on the network" button). `Discovery.kt` scans the phone's own /24 networks (Wi-Fi and hotspot) for ports 6701 (ezRemote Server, identified with /v2/info or /get_download_state), 9090 (GoldHEN payload loader) and 8080 (ezRemote web, weak evidence). Tap a result to fill the IP; if exactly one strong candidate is found and the field is empty, it is filled for you.
 - Only scans /24 networks. NOT compiled and NOT run on a phone or PS4. Router "client isolation" / guest Wi-Fi blocks the scan.
